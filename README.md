@@ -2,6 +2,10 @@
 
 The NightWriter class in `./lib/night_writer.rb` knows quite a bit about the details of how to decode and encode text to and from braille. With abstraction, polymorphism, inheritance, and encapsulation in mind, refactor this program to better align with object-oriented design.
 
+## Constraints
+
+Some external apps depend on the `NighWriter#encode_to_braille` and `NighWriter#encode_from_braille` interface. Your refactoring cannot change the end functionality or naming of these methods.
+
 ## Things to keep in mind
 
 * Single responsibility principle: "who" (i.e., which classes) should be responsible for what?
