@@ -39,4 +39,8 @@ module Alphabet
 			"?" => "..0.00"
 		}
 	end
+
+	def lookup(character, position)
+		self.braille_letter_hash[character].chars[position]
+	end
 end
