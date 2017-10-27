@@ -2,9 +2,7 @@ require_relative 'alphabet'
 
 class BrailleEncoder
 
-  def initialize
-    @alphabet = Alphabet.new
-  end
+  include Alphabet
 
   def translate(english)
     output = []
@@ -22,6 +20,6 @@ class BrailleEncoder
   end
 
   def lookup(character, position)
-    @alphabet.braille_letter_hash[character].chars[position]
+    self.braille_letter_hash[character].chars[position]
   end
 end

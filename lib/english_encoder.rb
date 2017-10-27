@@ -2,9 +2,7 @@ require_relative 'alphabet'
 
 class EnglishEncoder
 
-  def initialize
-    @alphabet = Alphabet.new
-  end
+  include Alphabet
 
   def translate(braille)
     lines = braille.split("\n")
@@ -22,7 +20,7 @@ class EnglishEncoder
         braille_character << as_one_line[(row_offset * n) + column_offset[1]]
       end
 
-      decoded_braille = @alphabet.braille_letter_hash.key(braille_character.join)
+      decoded_braille = self.braille_letter_hash.key(braille_character.join)
 
       if decoded_braille == :capitalize
         should_capitalize_next = true
